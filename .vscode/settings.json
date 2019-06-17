@@ -1,3 +1,4 @@
 {
+    // this is for windows you may fix this if you are working with mac or linux.
     "python.pythonPath": "${workspaceFolder}\\Scripts\\python.exe"
 }
