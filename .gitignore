@@ -2,3 +2,6 @@ Include/
 Lib/
 Scripts/
 pyvenv.cfg
+*.json
+.vscode/
+manuals/*.pdf
