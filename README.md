@@ -36,3 +36,7 @@ K13.2 Alphabetical index of AArch64 registers and System instructions
 K13.4 Alphabetical index of AArch32 registers and System instructions
 ```
 will fix soon.
+
+for ```AArch64 registers and System instructions```
+
+It seems in C5.3 to C5.5. it will easy to fix for adding them.
