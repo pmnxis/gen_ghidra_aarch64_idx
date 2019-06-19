@@ -11,11 +11,11 @@ Install ldefs and idx
 * modified\AARCH64.idx
 * modified\AARCH64.ldefs
 
-Create directory "__GhidraPath__\Ghidra\Processors\ARM\data\manuals"
+Create directory "__GhidraPath__\Ghidra\Processors\AARCH64\data\manuals"
 
 Download [DDI0487D_b_armv8_arm.pdf](https://static.docs.arm.com/ddi0487/db/DDI0487D_b_armv8_arm.pdf)
 
-Copy pdf and idx file to "__GhidraPath__\Ghidra\Processors\ARM\data\manuals".
+Copy pdf and idx file to "__GhidraPath__\Ghidra\Processors\AARCH64\data\manuals".
 
 Replace AARCH64.ldefs "__GhidraPath__\Ghidra\Processors\AARCH64\data\languages\AARCH64.ldefs"
 
