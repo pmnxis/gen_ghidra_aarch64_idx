@@ -53,7 +53,7 @@ def rm_title_idx(title):
     ret = title[a+1:len(title)]
     return ret
 
-def findout_point(pg_id_map, lst, catch='Alphabetical'):
+def findout_point(pg_id_map, lst, catch='Alphabetical', exclusive=['A32', 'Statistical Profiling Extension']):
     ret = list()
     flag = False
     sub_flag = -1
@@ -62,11 +62,16 @@ def findout_point(pg_id_map, lst, catch='Alphabetical'):
         dep = ele[0]
         title = ele[1]
         if (flag == False):
-            if title.find(catch) >= 0:
+            if (title.find(catch) >= 0):
                 #print('Find', end='')
+                exclusive_check = int(0)
+                for j in range(0, len(exclusive)):
+                    if title.find(exclusive[j]) >= 0:
+                        exclusive_check = exclusive_check + 1
                 print(title)
-                sub_flag = dep+1
-                flag = True
+                if exclusive_check is 0:
+                    sub_flag = dep+1
+                    flag = True
         else:
             if (sub_flag == dep) and (flag == True):
                 title = rm_title_idx(title)

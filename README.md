@@ -36,7 +36,12 @@ K13.2 Alphabetical index of AArch64 registers and System instructions
     C5.4 A64 System instructions for address translation
     C5.5 A64 System instructions for TLB maintenance
 ```
-is added. But 
+
+Remove this things
+```
+D9.2 Alphabetical list of Statistical Profiling Extension packets
+F5.1 Alphabetical list of T32 and A32 base instruction set instructions
+```
 
 TODO
 -----------------
@@ -45,6 +50,7 @@ TODO
 K13.4 Alphabetical index of AArch32 registers and System instructions
 ```
 Exactly they are AARCH32 instruction that working in AARCH64. I cannot sure should I add them for current ghidra system.
+Currently I removed but not sure this is right behavior.
 
 ### SIMD , NEON , Normal , A32, or other version's instructions were mixed but meesed up or not matching to Ghidra.
 A32 and A64 version of "add" are mixed and they have same index but page number in my idx file. I will fix this.
