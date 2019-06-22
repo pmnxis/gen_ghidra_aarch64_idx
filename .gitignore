@@ -1,7 +1,10 @@
+
+.vscode/
 Include/
 Lib/
 Scripts/
 pyvenv.cfg
 *.json
-.vscode/
 manuals/*.pdf
+manuals/
+outlines.csv
