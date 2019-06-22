@@ -46,12 +46,6 @@ K13.4 Alphabetical index of AArch32 registers and System instructions
 ```
 Exactly they are AARCH32 instruction that working in AARCH64. I cannot sure should I add them for current ghidra system.
 
-### A32 System instructions in TRM. And coudn't decide for adding them.
-```
-K13.4 Alphabetical index of AArch32 registers and System instructions
-```
-Exactly they are AARCH32 instruction that working in AARCH64. I cannot sure should I add them for current ghidra system.
-
 ### SIMD , NEON , Normal , A32, or other version's instructions were mixed but meesed up or not matching to Ghidra.
 A32 and A64 version of "add" are mixed and they have same index but page number in my idx file. I will fix this.
 
