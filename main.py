@@ -53,7 +53,7 @@ def rm_title_idx(title):
     ret = title[a+1:len(title)]
     return ret
 
-def findout_point(pg_id_map, lst, catch='Alphabetical', exclusive=['A32', 'Statistical Profiling Extension']):
+def findout_point(pg_id_map, lst, catch=['alphabetical', 'instructions'], exclusive=['A32', 'AArch32', 'Statistical Profiling Extension']):
     ret = list()
     flag = False
     sub_flag = -1
@@ -61,15 +61,21 @@ def findout_point(pg_id_map, lst, catch='Alphabetical', exclusive=['A32', 'Stati
         ele = lst[i]
         dep = ele[0]
         title = ele[1]
+        title_low = title.lower()
         if (flag == False):
-            if (title.find(catch) >= 0):
-                #print('Find', end='')
+            catch_check = int(0)
+            print(len(catch))
+            for ji in range(0, len(catch)):
+                dd = catch[ji].lower()
+                if title_low.find(dd) >=0:
+                    catch_check = catch_check + 1
+            if (catch_check == len(catch)):
                 exclusive_check = int(0)
-                for j in range(0, len(exclusive)):
-                    if title.find(exclusive[j]) >= 0:
+                for je in range(0, len(exclusive)):
+                    if title_low.find(exclusive[je].lower()) >= 0:
                         exclusive_check = exclusive_check + 1
-                print(title)
                 if exclusive_check is 0:
+                    print(title)
                     sub_flag = dep+1
                     flag = True
         else:
@@ -88,11 +94,6 @@ def rm_title_idx(title):
     if(a <= 0):
         print('error')
     ret = title[a+1:len(title)]
-    return ret
-
-def saa(title):
-    a = title.find(' (')
-    ret = title[0:a]
     return ret
 
 def retake(lst):
@@ -155,9 +156,6 @@ def write_to_idx(lst, head_str):
         f.write(data)
     f.close()
 
-
-    
-
 def main():
     path = ARMv8a_man_path
     pdf = (get_info(path))
@@ -167,35 +165,15 @@ def main():
     extra_temp = list()
     recursive_seek(data, elelist)
     pg_id_num_map = _setup_page_id_to_num(pdf)
-
-
     # for general things 
     ret = findout_point(pg_id_num_map, elelist)
-    # end of seeking general things
-
-        # for debug
-    '''
-    pfff = open("outlines.csv", 'w')
-    for i in range(0, len(elelist)):
-        ele = elelist[i]
-        dat = ''
-        dot = ''
-        for j in range(0, ele[0]):
-            dot = dot + '>'
-        dat = "%s\t,%s,\t\t%d\n" % (dot, ele[1] , pg_id_num_map[ele[2]]+1)
-        pfff.write(dat)
-    pfff.close()
-    '''
-
-    # for A64 system instructions for cache maintenence
-    print('a64si')
-    a64si_ca = findout_point(pg_id_num_map, elelist, catch='A64 System instructions for cache maintenance')
-    a64si_at = findout_point(pg_id_num_map, elelist, catch='A64 System instructions for address translation')
-    a64si_tm = findout_point(pg_id_num_map, elelist, catch='A64 System instructions for TLB maintenance')
+    print('a64_si_stuff')
+    # a64 si things
+    a64si_ca = findout_point(pg_id_num_map, elelist, catch=['A64 System instructions for cache maintenance'])
+    a64si_at = findout_point(pg_id_num_map, elelist, catch=['A64 System instructions for address translation'])
+    a64si_tm = findout_point(pg_id_num_map, elelist, catch=['A64 System instructions for TLB maintenance'])
     a64si = retake_a64si(a64si_ca + a64si_at + a64si_tm)
-
-    print(a64si)
-    # end for a64
+    # end for a64 si things
     bb = retake(ret + a64si)
     write_to_idx(bb, _head_str)
     print('done')
