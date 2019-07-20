@@ -7,8 +7,8 @@ import PyPDF2
 from PyPDF2 import PdfFileReader
 import sys
 
-ARMv8a_man_path = './manuals/DDI0487D_b_armv8_arm.pdf' 
-_head_str =  '@DDI0487D_b_armv8_arm.pdf[ARM Architecture Reference Manual - ARMv8, for ARMv8-A architecture profile, 29 April 2019 (ARM DDI 0487D.b (ID042519))]\n\n'
+ARMv8a_man_path = './manuals/DDI0487E_a_armv8_arm.pdf' 
+_head_str =  '@DDI0487E_a_armv8_arm.pdf[ARM Architecture Reference Manual - ARMv8, for ARMv8-A architecture profile, 05 July 2019 (ARM DDI 0487E.a (ID070919))]\n\n'
 
 
 def get_info(path):
