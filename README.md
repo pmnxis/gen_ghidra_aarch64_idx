@@ -4,6 +4,9 @@ This things are code for generate idx file for ARM64(AARCH64) for [Ghidra](https
 
 Also this repo include modified ldefs and idx file that generated from me.
 
+### Story telling about this repo with Korea Description.
+[해당 마크다운 문서](<./etc/Story of Pulling request to NSA Ghidra.md>)
+
 Install ldefs and idx
 -----------------
 ### Resouce
